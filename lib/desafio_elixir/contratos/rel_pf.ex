@@ -6,8 +6,8 @@ defmodule DesafioElixir.Contratos.Rel_PF do
     field :pessoa_fisica_id, :id
     field :contratos_id, :id
 
-    has_many :contratos, Contratos.Contrato
-    has_many :pessoas_fisicas, PessoasFisicas.PessoaFisica
+    #has_many :contratos, Contratos.Contrato
+    #has_many :pessoas_fisicas, PessoasFisicas.PessoaFisica
 
     timestamps()
   end

@@ -10,8 +10,8 @@ defmodule DesafioElixir.Contratos.Contrato do
     field :nome, :string
     field :pdf, :string
 
-    belongs_to :contrato_rel_pessoa_fisica, Rel_PF
-    belongs_to :contrato_rel_pessoa_juridica, Rel_PJ
+    #belongs_to :contrato_rel_pessoa_fisica, Rel_PF
+    #belongs_to :contrato_rel_pessoa_juridica, Rel_PJ
     #many_to_many :pessoas_juridicas, DesafioElixir.PessoasJuridicas.PessoaJuridica, join_through: "contrato_rel_pessoa_juridica"
 
     timestamps()
