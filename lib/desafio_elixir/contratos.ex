@@ -7,6 +7,8 @@ defmodule DesafioElixir.Contratos do
   alias DesafioElixir.Repo
 
   alias DesafioElixir.Contratos.Contrato
+  alias DesafioElixir.Contratos.Rel_PF
+  alias DesafioElixir.Contratos.Rel_PJ
 
   @doc """
   Returns the list of contratos.
@@ -52,6 +54,34 @@ defmodule DesafioElixir.Contratos do
   def create_contrato(attrs \\ %{}) do
     %Contrato{}
     |> Contrato.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Cria um relacionamento entre contrato e PF para cada PF da lista
+  """
+
+  def create_rel_pf(attrs \\ %{}, contrato_id) do
+    #%Contrato{}
+    #|> Contrato.changeset(attrs)
+    #|> Repo.insert()
+
+    %Rel_PF{}
+    |> Rel_PF.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Cria um relacionamento entre contrato e PJ para cada PJ da lista
+  """
+
+  def create_rel_pj(attrs \\ %{}, contrato_id) do
+    #%Contrato{}
+    #|> Contrato.changeset(attrs)
+    #|> Repo.insert()
+
+    %Rel_PJ{}
+    |> Rel_PJ.changeset(attrs)
     |> Repo.insert()
   end
 

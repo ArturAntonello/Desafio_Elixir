@@ -15,6 +15,14 @@ defmodule DesafioElixirWeb.ContratoController do
 
   def create(conn, %{"contrato" => contrato_params, "pessoa_fisica" => pessoa_fisica_params,"pessoa_juridica" => pessoa_juridica_params}) do
     with {:ok, %Contrato{} = contrato} <- Contratos.create_contrato(contrato_params) do
+      #Após criar contrato, criar os relacionamentos com Rel_PF/Rel_PJ
+      #pessoa_fisica_params = lista de ids de PFs
+      #pessoa_juridica_params = lista de ids de PJ
+
+      #Contratos.create_rel_pf(pessoa_fisica_params, contrato.id)
+      #Contratos.create_rel_pj(pessoa_juridica_params, contrato.id)
+
+      #Retorna json do contrato
       conn
       |> put_status(:created)
       |> put_resp_header("location", Routes.contrato_path(conn, :show, contrato))
